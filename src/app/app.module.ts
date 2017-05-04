@@ -9,25 +9,23 @@ import { HeroesComponent } from './heroes/heroes.component';
 
 import { HeroService } from 'app/hero-service';
 
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from 'app/app-routing.module';
+
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
-    HeroesComponent
+    HeroesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [
     HeroService
