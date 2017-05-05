@@ -49,6 +49,19 @@ export class HeroesComponent implements OnInit {
         );
   }
 
+  deleteHero(hero: Hero): void {
+    if (!hero) {
+      return;
+    }
+    this.heroService.delete(hero.id)
+      .then(
+        texto => {
+          this.heroes.splice(this.heroes.indexOf(hero), 1);
+          //alert('Se ha eliminado ' + hero.name + ' con éxito!');
+        }
+      );
+  }
+
   ngOnInit(): void {
     this.getHeroes();
   }
