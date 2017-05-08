@@ -57,7 +57,10 @@ export class HeroesComponent implements OnInit {
       .then(
         texto => {
           this.heroes.splice(this.heroes.indexOf(hero), 1);
-          //alert('Se ha eliminado ' + hero.name + ' con éxito!');
+          if (this.selectedHero == hero)
+          {
+            this.selectedHero = null;
+          }
         }
       );
   }
